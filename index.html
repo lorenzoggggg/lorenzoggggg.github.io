@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first site</title>
+
+    <link rel="stylesheet" href="stylehome.css">
+</head>
+<body>
+    <header>
+        <h1><img class="logo" src="./assets/placeholderLogo.PNG" width="50" height="50" alt="logo">Website Name</h1>
+    </header>
+        <div class="toolbar">
+            <ul>
+                <li><a href="./indexhome.html">Home</a></li>
+                <li><a href="./indexinfo.html">Booking info</a></li>
+                <li><a href="./indexcontact.html">Contact</a></li>
+                <li><a href="./indexabout.html">About</a></li>
+            </ul>
+        </div>
+            <hr>
+            <section>
+                <div class="container-half card">
+                    <subtitle class="card-title">Booking Forms</subtitle>
+                    <progress value="10" max="100"></progress>
+                        <div id="form-page1" class="form-page" style="display: block">
+                            <div>
+                                <h3>Customer Details</h3>
+                            </div>
+                            <div>
+                                <label for="firstName" class="row">
+                                    First Name:
+                                    <input type="text" id="name-first"/>
+                                </label>
+                                <label for="lastName" class="row">
+                                    Last Name:
+                                    <input type="text" id="name-last"/>
+                                </label>
+                                <label for="email" class="row">
+                                    Email:
+                                    <input type="text" id="email"/>
+                            </div>
+                            <div>
+                                <button class="next" type="button" onclick="showPage(2)">
+                                    Next Page
+                                </button>
+                            </div>
+                        </div>
+                        <div id="form-page2" class="form-page" style="display: none">
+                            <div>
+                                <h3>Stay Details</h3>
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="stay-start">Staying from:</label>
+                                    <input type="date" id="stay-start" name="stay-start">
+                                    <label for="stay-end">to:</label>
+                                    <input type="date" id="stay-end" name="stay-end">
+                                </div>
+                                <div>
+                                    <label for="peopleNum">Number of people staying:</label>
+                                    <input type="number" id="peopleNum" name="peopleNum" min="1" max="15"> 
+                                </div>
+                                <div>
+                                    <label for="cookingFac">
+                                        Cooking facilities needed?:
+                                        <select>
+                                            <option value="no">No</option>
+                                            <option value="basic">Basic (microwave & sink)</option>
+                                            <option value="full">Full (gas stove, oven, microwave, sink, equipment)</option>
+                                            <option value="fullWash">Full (gas stove, oven, microwave, sink, equipment) + Dishwasher</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div>
+                                    Borrow equipment?: 
+                                    <input type="checkbox" id="equipment1" name="equipment1" value="kayak">
+                                    <label for="equipment1"> Kayak</label>
+                                    <input type="checkbox" id="equipment2" name="equipment2" value="surfboard">
+                                    <label for="equipment2"> Surfboard</label>
+                                    <input type="checkbox" id="equipment3" name="equipment3" value="paddleboard">
+                                    <label for="equipment3"> Paddleboard</label>
+                                    <input type="checkbox" id="equipment4" name="equipment4" value="fishingrods">
+                                    <label for="equipment4"> Fishing rods</label>
+                                    <input type="checkbox" id="equipment5" name="equipment5" value="lifejackets">
+                                    <label for="equipment5"> Lifejackets</label>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="next" type="button" onclick="showPage(3)">
+                                    Next Page
+                                </button>
+                                <button class="previous" type="button" onclick="showPage(1)">
+                                    Previous Page
+                                </button>
+                            </div>
+                        </div>
+                        <div id="form-page3" class="form-page" style="display: none">
+                            <div>
+                                <h3>Agreement</h3>
+                            </div>
+                            <div>
+                                <h2>1. Respect for Nature</h2>
+                                    <p>I agree to respect all flora and fauna at Piha Beach and its surrounding areas, refraining from damaging or disturbing them in any way.
+                                    I will not remove any plants, rocks, or other natural resources from Piha Beach.</p>
+                                <h2>2. Waste Management</h2>
+                                    <p>I will properly dispose of all my waste in designated bins, ensuring that no litter is left on the beach or its vicinity.
+                                    I will avoid using single-use plastics and will bring reusable items whenever possible.</p>
+                                <h2>3. Protection of Wildlife</h2>
+                                    <p>I will keep a safe distance from wildlife and refrain from feeding or approaching them, to avoid causing stress or harm.
+                                    I will adhere to any regulations regarding protected species and nesting areas.</p>
+                                <h2>4. Responsible Behavior</h2>
+                                    <p>I will follow all safety guidelines and warnings provided by local authorities, ensuring my own safety and the safety of others.
+                                    I will refrain from any behavior that may endanger myself, others, or the environment.</p>
+                                <h2>5. Cultural Respect</h2>
+                                    <p>I will show respect for the cultural heritage of Piha Beach, including any sacred sites or historical artifacts.
+                                    I will seek permission before accessing any culturally sensitive areas or participating in cultural activities.</p>
+                            </div>
+                            <div>
+                                Do you agree with the local native conservation initiative agreement?
+                                <input type="radio" id="yes" name="agreementAns" value="yes">
+                                <label for="yes">Yes</label>
+                                <input type="radio" id="no" name="agreementAns" value="no">
+                                <label for="no">No</label>
+                            </div>
+                            <div>
+                                <button class="previous" type="button" onclick="showPage(2)">
+                                    Previous Page
+                                </button>
+                                <button class="next" type="button" onclick="showPage(4)">
+                                    Next Page
+                                </button>
+                            </div>
+                        </div>
+                        <div id="form-page4" class="form-page" style="display: none">
+                            <div>
+                                <h3>Summary</h3>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    Name: <span id="summary-name"></span>
+                                </div>
+                                <div class="row">
+                                    Email: <span id="summary-email"></span>
+                                </div>
+                                <div class="row">
+                                    Staying: <span id="summary-stay"></span>
+                                </div>
+                                <div class="row">
+                                    Number of people: <span id="summary-peopleNum"></span>
+                                </div>
+                                <div class="row">
+                                    Cooking facilities: <span id="summary-cooking"></span>
+                                </div>
+                                <div class="row">
+                                    Borrowed equipment: <span id="summary-equip"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="previous" type="button" onclick="showPage(3)">
+                                    Previous Page
+                                </button>
+                                <button class="next" type="button" onclick="submitData()">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                </div>
+                <script src="./formPaging.js"></script>
+                <hr>
+            </section>
+    <section>
+        <div class="column-side"><style></style>
+            <img src="./assets/placeholderLogo.png" alt="placeholderAd" width="391px" height="695px">
+        </div>
+        <h3>Heading</h3>
+        <div class="column-main">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div id="advert1">
+                <div id="ad1Scene1">
+                    <img src="./assets/ad1Scene1.jpg" alt="ad1Scene1BG" width="1000px" height="270px">
+                </div>
+                <div id="ad1Scene2">
+                    <img src="./assets/ad1Scene2.png" alt="ad1Scene2BG" width="1000px" height="230px">
+                </div>
+                <div id="ad1Textline1">Piha</div>
+                <div id="ad1Textline2">Relaxation or...</div>
+                <div id="ad2Textline1">Piha</div>
+                <div id="ad2Textline2">Thrill...</div>
+                <div id="adStudentName">Lorenzo Glendining</div>
+                <div id="adStudentID">1555434</div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <footer>
+    <div class="toolbarBottom"><ul>
+        <li><a href="./indexhome.html">Home</a></li>
+        <li><a href="./indexinfo.html">Booking info</a></li>
+        <li><a href="./indexcontact.html">Contact</a></li>
+        <li><a href="./indexabout.html">About</a></li>
+        <li><a href=""><img src="./assets/instagramIcon.png" alt="instagramIcon" style="width:35px;height:35px;"></a></li>
+        <li><a href=""><img src="./assets/facebookIcon.png" alt="facebookIcon" style="width:35px;height:35px;"></a></li>
+        <li><a href=""><img src="./assets/youtubeIcon.png" alt="youtubeIcon" style="width:35px;height:35px;"></a></li>
+      </ul>
+    </div>
+    </footer>
+</body>
+</html>
