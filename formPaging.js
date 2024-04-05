@@ -14,6 +14,33 @@ const summaryEquip = document.getElementById("summary-equip");
 
 const formData = document.getElementById("collected-data");
 
+//Replay Button Function (NOT WORKING)
+const scene1 = document.getElementById("ad2Scene1");
+const scene2 = document.getElementById("ad2Scene2");
+const scene3 = document.getElementById("ad2Scene3");
+const scene4 = document.getElementById("ad2Scene4");
+const replaybtn = document.getElementById("replay");
+
+replaybtn.addEventListener("click", function(e) {
+  e.preventDefault;
+  
+  scene1.classList.remove("ad2scene1ani");
+  scene2.classList.remove("ad2scene2ani");
+  scene3.classList.remove("ad2scene2ani");
+  scene4.classList.remove("ad2scene4ani");
+  
+  void scene1.offsetWidth;
+  void scene2.offsetWidth;
+  void scene3.offsetWidth;
+  void scene4.offsetWidth;
+  
+  scene1.classList.add("ad2scene1ani");
+  scene2.classList.add("ad2scene2ani");
+  scene3.classList.add("ad2scene2ani");
+  scene4.classList.add("ad2scene4ani");
+}, false);
+
+//Booking page navigation
 function showPage(pageNumber) {
     switch (pageNumber) {
         case 1:
@@ -54,6 +81,7 @@ function showPage(pageNumber) {
     }
 }
 
+//Getting user input data for summary tab
 function getFormData() {
     const fName = document.getElementById("name-first").value;
     const lName = document.getElementById("name-last").value;
@@ -63,18 +91,23 @@ function getFormData() {
     const numPeople = document.getElementById("peopleNum").value;
 
     const cookingNeed = document.querySelector('select').value;
-    const equipNeed = document.querySelector('input[checkbox]:checked').value;
+    const equipKayak = document.getElementById('equipment1').value;
+    const equipSurfboard = document.getElementById('equipment2').value;
+    const equipPaddleboard = document.getElementById('equipment3').value;
+    const equipFishingrod = document.getElementById('equipment4').value;
+    const equipLifejacket = document.getElementById('equipment5').value;
 
     return data = {
-        name: fName + "" + lName,
+        name: fName + " " + lName,
         email: emailAddress,
-        stay: stayFrom + "" + stayTo,
+        stay: stayFrom + " to " + stayTo,
         people: numPeople,
         cooking: cookingNeed,
-        equip: equipNeed,
+        equip: equipKayak + ", " + equipSurfboard + ", " + equipPaddleboard + ", " + equipFishingrod + ", " + equipLifejacket,
     };
 }
 
+//Displaying user input data in summary tab
 function updateSummary() {
     const data = getFormData();
     console.log(data);
@@ -84,21 +117,4 @@ function updateSummary() {
     summaryPeopleNum.innerHTML = data.people;
     summaryCooking.innerHTML = data.cooking;
     summaryEquip.innerHTML = data.equip;
-}
-
-//not being used rn
-function submitData() {
-    const dataRow = document.createElement("tr");
-    const cellName = document.createElement("td");
-    const cellVehicle = document.createElement("td");
-
-    dataRow.appendChild(cellName);
-    dataRow.appendChild(cellVehicle);
-
-    const data = getFormData();
-
-    cellName.innerHTML = data.name;
-    cellVehicle.innerHTML = data.vehicle;
-
-    formData.appendChild(dataRow);
 }
